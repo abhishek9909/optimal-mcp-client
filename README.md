@@ -23,6 +23,8 @@ The problem statement is to create benchmarks and evaluate the optimal strategy 
 - Prepare sandbox (or the-like) environment for tool execution.
 - Define expected ground truth behaviour.
 
+### Define, Implement prompting strategies.
+
 ### Eval Scripts:
 
 ### Experimentation
