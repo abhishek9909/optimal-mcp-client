@@ -5,7 +5,7 @@ The problem statement is to create benchmarks and evaluate the optimal strategy 
 
  ## Rough Plan
  Here is how I plan to do it:
- - Create datasets extrapolating tool usage across single and multiple servers. Then, augment dataset with unanswerable questions. Check the release to see the `raw_data` for a sample of queries.
+ - Create datasets extrapolating tool usage across single and multiple servers. Then, augment dataset with unanswerable questions. See [here](./dataset_creation/raw_data) for a sample of queries.
  - Test out different prompting strategies in the client: Zero-shot CoT; Plan&Solve; Just-Code; Budget-Forcing ('think' vs. 'dont think') etc.
  - Evaluate on accuracy and the number of tokens for each type of client (aim for a stable metric over multiple runs).
  
