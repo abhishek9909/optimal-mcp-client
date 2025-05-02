@@ -1,0 +1,184 @@
+{"tools": [
+    {
+      "name": "slack_list_channels",
+      "description": "List public or pre-defined channels in the workspace",
+      "arguments": [
+        {
+          "name": "limit",
+          "type": "number",
+          "description": "Maximum number of channels to return (default: 100, max: 200)",
+          "required": false
+        },
+        {
+          "name": "cursor",
+          "type": "string",
+          "description": "Pagination cursor for next page",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "slack_post_message",
+      "description": "Post a new message to a Slack channel",
+      "arguments": [
+        {
+          "name": "channel_id",
+          "type": "string",
+          "description": "The ID of the channel to post to",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "description": "The message text to post",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "slack_reply_to_thread",
+      "description": "Reply to a specific message thread",
+      "arguments": [
+        {
+          "name": "channel_id",
+          "type": "string",
+          "description": "The channel containing the thread",
+          "required": true
+        },
+        {
+          "name": "thread_ts",
+          "type": "string",
+          "description": "Timestamp of the parent message",
+          "required": true
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "description": "The reply text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "slack_add_reaction",
+      "description": "Add an emoji reaction to a message",
+      "arguments": [
+        {
+          "name": "channel_id",
+          "type": "string",
+          "description": "The channel containing the message",
+          "required": true
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "description": "Message timestamp to react to",
+          "required": true
+        },
+        {
+          "name": "reaction",
+          "type": "string",
+          "description": "Emoji name without colons",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "slack_get_channel_history",
+      "description": "Get recent messages from a channel",
+      "arguments": [
+        {
+          "name": "channel_id",
+          "type": "string",
+          "description": "The channel ID",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "number",
+          "description": "Number of messages to retrieve (default: 10)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "slack_get_thread_replies",
+      "description": "Get all replies in a message thread",
+      "arguments": [
+        {
+          "name": "channel_id",
+          "type": "string",
+          "description": "The channel containing the thread",
+          "required": true
+        },
+        {
+          "name": "thread_ts",
+          "type": "string",
+          "description": "Timestamp of the parent message",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "slack_get_users",
+      "description": "Get list of workspace users with basic profile information",
+      "arguments": [
+        {
+          "name": "cursor",
+          "type": "string",
+          "description": "Pagination cursor for next page",
+          "required": false
+        },
+        {
+          "name": "limit",
+          "type": "number",
+          "description": "Maximum users to return (default: 100, max: 200)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "slack_get_user_profile",
+      "description": "Get detailed profile information for a specific user",
+      "arguments": [
+        {
+          "name": "user_id",
+          "type": "string",
+          "description": "The user's ID",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Setup",
+      "description": "Instructions for setting up the Slack MCP Server",
+      "arguments": []
+    },
+    {
+      "name": "Environment Variables",
+      "description": "Required and optional environment variables for configuration",
+      "arguments": [
+        {
+          "name": "SLACK_BOT_TOKEN",
+          "type": "string",
+          "description": "Required. The Bot User OAuth Token starting with 'xoxb-'",
+          "required": true
+        },
+        {
+          "name": "SLACK_TEAM_ID",
+          "type": "string",
+          "description": "Required. Your Slack workspace ID starting with 'T'",
+          "required": true
+        },
+        {
+          "name": "SLACK_CHANNEL_IDS",
+          "type": "string",
+          "description": "Optional. Comma-separated list of channel IDs to limit channel access",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

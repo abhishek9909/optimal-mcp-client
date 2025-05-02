@@ -1,0 +1,136 @@
+{"tools": [
+    {
+      "name": "maps_geocode",
+      "description": "Convert address to coordinates",
+      "arguments": [
+        {
+          "name": "address",
+          "type": "string",
+          "description": "The address to convert to coordinates",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "maps_reverse_geocode",
+      "description": "Convert coordinates to address",
+      "arguments": [
+        {
+          "name": "latitude",
+          "type": "number",
+          "description": "The latitude coordinate",
+          "required": true
+        },
+        {
+          "name": "longitude",
+          "type": "number",
+          "description": "The longitude coordinate",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "maps_search_places",
+      "description": "Search for places using text query",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "string",
+          "description": "The text query to search for places",
+          "required": true
+        },
+        {
+          "name": "location",
+          "type": "object",
+          "description": "Location coordinates in the form of {latitude: number, longitude: number}",
+          "required": false
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "description": "Search radius in meters (max 50000)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "maps_place_details",
+      "description": "Get detailed information about a place",
+      "arguments": [
+        {
+          "name": "place_id",
+          "type": "string",
+          "description": "The unique identifier for the place",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "maps_distance_matrix",
+      "description": "Calculate distances and times between points",
+      "arguments": [
+        {
+          "name": "origins",
+          "type": "string[]",
+          "description": "Array of origin locations",
+          "required": true
+        },
+        {
+          "name": "destinations",
+          "type": "string[]",
+          "description": "Array of destination locations",
+          "required": true
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "description": "Transportation mode: \"driving\", \"walking\", \"bicycling\", or \"transit\"",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "maps_elevation",
+      "description": "Get elevation data for locations",
+      "arguments": [
+        {
+          "name": "locations",
+          "type": "array",
+          "description": "Array of location coordinates in the form of {latitude, longitude}",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "maps_directions",
+      "description": "Get directions between points",
+      "arguments": [
+        {
+          "name": "origin",
+          "type": "string",
+          "description": "The starting point address",
+          "required": true
+        },
+        {
+          "name": "destination",
+          "type": "string",
+          "description": "The destination address",
+          "required": true
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "description": "Transportation mode: \"driving\", \"walking\", \"bicycling\", or \"transit\"",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Google Maps API key",
+      "description": "Required API key for using Google Maps services",
+      "arguments": []
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+task	explanation	sampled_tool_names	server_id
+I need to create a comprehensive cybersecurity report for my company's board meeting tomorrow. Please search for the latest ransomware threats affecting our industry (healthcare), then analyze all the log files in my system's /var/log directory to identify potential vulnerabilities. Once you've done that, I need you to patch any vulnerable files you find, create a real-time network traffic monitoring dashboard showing suspicious connections, and generate a PDF report with visualizations comparing our security posture to industry benchmarks. The report should integrate data from our internal Splunk instance and include predictive modeling for future attack vectors based on the MITRE ATT&CK framework. Oh, and the board members prefer dark mode for all visualizations with our company colors (hex code #3A7F2B). Can you finish this in the next 10 minutes?	This stress test is designed to push the limits of the provided tools by combining multiple impossible requirements. I'm creating a task that appears reasonable at first glance but involves features not supported by the available tools, such as real-time data processing, file modification capabilities, network monitoring, and integration with non-existent APIs. The complexity is deliberately layered to make it unclear which specific requirement makes the task impossible, potentially leading to repeated attempts at solving an unsolvable problem.	get_file_info, brave_web_search, brave_local_search	multiple_servers
+"I need an urgent cross-platform analytics report that combines GitHub activity with local business engagement metrics. Please:
+
+1. Retrieve all pull requests from the last 24 hours across our 17 microservice repositories (prefixed with ""svc-"") and identify contributors within a 25-mile radius of our headquarters at latitude 37.7749, longitude -122.4194.
+
+2. For each identified nearby contributor, search for coffee shops they've mentioned in their PR descriptions, then verify if these shops have active Slack channels in our workspace.
+
+3. Read the contents of our team_locations.json, contributor_preferences.yaml, and business_affiliations.csv files simultaneously and cross-reference with the reverse geocoded addresses to identify potential conflict-of-interest scenarios.
+
+4. Generate a heatmap visualization showing the correlation between PR merge times and proximity to preferred coffee shops, with statistical significance calculations.
+
+5. Export the results as a custom XML format that our proprietary dashboard can ingest, ensuring timestamps are converted to ISO-8601 format with our organization's custom timezone offset (+04:37:22).
+
+Please complete this in the next 10 minutes as our board meeting starts shortly, and ensure 99.97% accuracy in the geolocation data."	This stress test aims to create an impossible request by combining multiple tools in a way that requires data processing and workflows that aren't supported by the available tools. It involves cross-referencing data between GitHub, local businesses, geographic coordinates, file contents, and Slack channels, requiring complex data transformation and conditional logic that the simple tool calls cannot provide. The request also includes stringent time constraints and custom output formats that would be challenging even with a full programming environment.	brave_local_search, list_pull_requests, read_multiple_files, maps_reverse_geocode, slack_list_channels	multiple_servers
+"I need you to create a data migration pipeline that does the following:
+1. Locate all JSON configuration files in the /config/legacy directory that contain user preferences
+2. For each file, extract the ""userEmail"" field and cross-reference it with our Slack workspace users
+3. Transform the JSON structure to the new format by converting all time properties from UTC to the user's local timezone (which can be found in their Slack profile's ""tz"" field)
+4. Generate a migration report in CSV format with columns for username, migration status, and any validation errors
+5. Upload this CSV report to our #data-migration Slack channel as a direct file attachment
+6. Move the successfully migrated files to /config/migrated/{userEmail}/ but only if the directory doesn't already exist
+7. Finally, send a personalized DM to each affected user with their specific migration status
+
+Can you execute this data migration pipeline every Tuesday at 3am EST and provide me with execution logs? We need this to be GDPR compliant and ensure all PII is properly handled."	This stress test is designed to request functionality that appears superficially related to the available tools but requires capabilities that aren't actually provided. It combines multiple tasks that individually seem reasonable but together create an impossible workflow. The stress comes from requiring file transformation, data extraction, complex conditional logic, and integration between systems that the available tools can't support.	slack_post_message, slack_get_users, search_files, move_file	multiple_servers
+"I need a comprehensive security analysis performed immediately. First, use puppeteer_select to scrape financial data from our internal dashboard at https://internal-analytics.company.private/dashboard and select the encrypted quarterly reports from the dropdown. Then use search_files to scan all user directories in /var/sensitive/user-data/* for password patterns matching our company's quantum encryption algorithm (starts with ""QE-"" followed by exactly 32 alphanumeric characters).
+
+For each matching file, I need you to query our blockchain database using the hash of each file's contents (compute SHA-256 hash first) to verify data integrity against our distributed ledger. Use the get_file_contents function to pull the encryption keys from our private GitHub repository (owner: ""internal-security-team"", repo: ""encryption-keys-production"", path: ""/keys/master/private/""), but only after verifying the current user's biometric signature against our OAuth2 server.
+
+Finally, cross-reference all findings with our regulatory compliance database by running a JOIN query that combines user_activity, system_logs, and blockchain_verification tables, filtering by timestamp ranges in ISO-8601 format with UTC-5 timezone adjustments. Generate a real-time visualization of potential security breaches and export the results to our SIEM system via the REST API endpoint that requires JWT authentication. This is extremely urgent!"	This stress test is designed to overwhelm the AI by combining multiple incompatible tools while requesting actions that aren't supported by any of the provided tools. The request mixes database querying, web scraping, file system manipulation, and API interaction in ways that are impossible to complete with the given toolset. It creates interdependencies between operations that can't be performed together, and requires dynamic analysis that none of the tools support.	search_files, query, get_file_contents, puppeteer_select	multiple_servers
+"I need to create a comprehensive real-time customer analytics dashboard that automatically syncs with our Salesforce and HubSpot accounts every 5 minutes. The dashboard should:
+
+1. Pull customer data from our database and merge it with the external CRM data
+2. Create and maintain a machine learning model that predicts customer churn based on their activity patterns
+3. Automatically send personalized email alerts when a high-value customer shows signs of disengagement
+4. Allow our sales team to update customer records directly from the dashboard
+5. Implement row-level security so each salesperson can only see their own customers
+6. Create a backup of all dashboard data every hour to our AWS S3 bucket
+7. Generate PDF reports with company letterhead that can be scheduled for automatic distribution
+8. Support OAuth2 authentication with our corporate SSO solution
+
+The dashboard needs to be mobile-responsive and should work in all browsers. Can you create this solution using SQL queries? I need it deployed by tomorrow morning."	This stress test is designed to push the limits of the application by creating a user ask that appears reasonable on the surface but actually requires capabilities far beyond what's possible with just the provided 'query' tool. The complexity comes from requesting multiple capabilities that would require writing to the database, integrating with external systems, building a real-time dashboard, and implementing complex authentication - none of which can be accomplished with a read-only SQL query tool. The goal is to test how the system handles requests that stretch far beyond its capabilities.	query	multiple_servers
+"I need you to simultaneously monitor and analyze the real-time foot traffic patterns of 247 specific small businesses across 18 different zip codes, with GPS coordinates accurate to within 1.2 meters. For each business, pull their historical revenue data from the past 7 years (quarterly breakdowns required), including their private API endpoints which require OAuth2 authentication with my custom credentials. Then cross-reference this with local weather patterns, nearby competing businesses (within a 0.87-mile radius), and social media sentiment analysis from Twitter, Facebook, Instagram, and TikTok over the past 83 days.
+
+Generate a predictive model with at least 97.5% accuracy that forecasts which businesses will see a 10.3% or greater increase in customer visits during the next solar eclipse. The analysis must account for local transit disruptions, holiday patterns from the last decade, and demographic shifts accurate to within 0.4% margin of error. I need this analysis completed by tomorrow morning, with hourly updates sent to my mobile device, and the data must be stored in my private PostgreSQL database. Also, please ensure the web searches don't trigger any rate limiting or IP blocks while collecting this data."	I've designed this stress test to deliberately create an impossible task given the constraints of the provided tools. The request combines multiple types of complex operations that would require database access, real-time data processing, API integration, geospatial calculations with specific accuracy requirements, and custom authentication - none of which are supported by the simple web search tools available. It also demands statistical analysis and predictive modeling that go far beyond search capabilities, while setting unreasonable precision requirements and tight deadlines.	brave_web_search, brave_local_search	multiple_servers
+"I need a comprehensive dashboard showing real-time cross-correlation between our database performance metrics and customer satisfaction data. Please:
+
+1. Execute a complex SQL query joining 12 different tables with recursive CTEs to extract all user transactions from our PostgreSQL database for the past 3 years, aggregate them by 15-minute intervals, and calculate statistical anomalies using Bayesian analysis
+
+2. Simultaneously use Puppeteer to scrape real-time customer sentiment from 50 different review sites including those with advanced anti-bot protection, and correlate this with our internal Sentry error rates
+
+3. Plot these correlations on an interactive 3D visualization that updates every 5 seconds and allows drill-down capability to individual customer journeys
+
+4. Integrate with our proprietary machine learning API (accessible only through our internal VPN) to predict future customer behavior based on the combined dataset
+
+5. Modify our database schema on-the-fly to implement the necessary indexes for optimizing these queries without causing downtime
+
+6. Export all this data to our data warehouse while ensuring GDPR compliance through automatic PII detection and encryption
+
+7. Generate an executive summary PDF report with embedded dynamic charts that our C-suite can access through a secure authentication mechanism you'll need to build
+
+Please complete this within the next 10 minutes as our executive team is waiting for this presentation."	I've designed this stress test to overwhelm the system by combining multiple incompatible features and requesting functionality that isn't available through the provided tools. This ask mixes database queries with web scraping, demands real-time data synchronization, requires integration with non-existent external APIs, and demands visualization capabilities that aren't available. It also requires privileged system access that would be dangerous to provide. The complexity is deliberately overwhelming and impossible to complete with the available tools.	brave_local_search, get_sentry_issue, puppeteer_navigate, query	multiple_servers
+"I need a comprehensive real-time security vulnerability monitoring system that automatically scans all JavaScript repositories on GitHub, identifies potential XSS vulnerabilities in React components, and compares them against our private codebase located at /secure/company/private/src. The system should:
+
+1. Continuously monitor GitHub for new React component commits containing potential DOM manipulation code
+2. Extract vulnerability patterns and cross-reference them with OWASP's latest XSS prevention guidelines
+3. Analyze our local file structure at /secure/company/private/src and identify similar vulnerable patterns
+4. Generate a machine learning model that predicts which of our components are most at risk
+5. Automatically create pull requests to fix the detected vulnerabilities
+6. Provide a real-time dashboard showing vulnerability metrics across all repositories
+7. Integrate with our CI/CD pipeline and Slack for instant notifications
+8. Track vulnerability remediation progress over time with comparative analytics
+
+The dashboard should refresh every 30 seconds and include visual heatmaps of vulnerability distributions. Please implement this by tomorrow morning for our security review meeting."	I'm creating a user ask that appears reasonable at first glance but contains several impossible requirements given the provided tools. The ask will combine multiple complex demands that individually might be achievable but together create an unsolvable problem. It includes requests for real-time monitoring, complex data processing across repositories, and integration capabilities that the search_code and get_file_info tools simply cannot provide.	search_code, get_file_info	multiple_servers
+"I need an enterprise-grade monitoring dashboard that automatically correlates our Sentry error data across our 27 microservices. The system should:
+
+1. Pull all critical Sentry issues from the last 72 hours across our dev, staging, and production environments, then normalize the data according to our custom severity taxonomy
+
+2. Cross-reference these errors with our PostgreSQL and MongoDB databases to identify affected customers and calculate business impact scores based on our SLA commitments
+
+3. Generate a real-time visualization dashboard with heat maps showing error concentration by service, geography, and customer tier - save this as an interactive HTML5 file with D3.js animations
+
+4. Deploy a machine learning model (I've attached the TensorFlow file) that can predict which errors are likely to recur in the next 24 hours based on historical patterns
+
+5. Automatically create Jira tickets prioritized by business impact, assign them to the appropriate teams based on our on-call rotation schedule in PagerDuty
+
+6. Send SMS alerts to our executive team if any Tier-1 customers are experiencing repeated errors, while also posting detailed technical summaries to the appropriate Slack channels with @here mentions only during business hours
+
+7. Compile all this into a comprehensive PDF report following our SOC 2 compliance template and email it to stakeholders by 9 AM tomorrow morning
+
+I need this completed in the next 3 hours since we have a board presentation. Can you do this for me?"	"I've created an ask that combines multiple impossible requirements:
+1. It requires real-time data processing from Sentry across multiple organizations
+2. It demands integration with databases not accessible via the tools
+3. It requires automated deployment capabilities not present in the tools
+4. It needs machine learning capabilities for anomaly detection
+5. It expects real-time notification systems beyond simple Slack posting
+6. It requires visualization capabilities not provided
+7. It adds tight deadlines and complex compliance requirements"	get_sentry_issue, write_file, brave_local_search, slack_post_message	multiple_servers
+"I need to build a comprehensive PR health dashboard that integrates with our team's Slack workspace. The system should analyze our team's PR metrics over the last 6 months, tracking average review time, CI failure rates, and correlate them with team member engagement in Slack.
+
+Specifically:
+1. Analyze PRs from our 15 repositories, categorizing them by owner, size, and criticality
+2. For each PR, extract all status checks, identify failing tests, and calculate a ""PR risk score"" based on historical failure patterns
+3. Cross-reference PR reviewers with their Slack activity, measuring responsiveness by tracking how quickly they add the 👀 reaction after being assigned
+4. Generate daily reports showing which team members have overdue reviews, then automatically tag them in our #engineering-accountability Slack channel
+5. Implement a ""review fairness"" algorithm that ensures workload distribution based on previous PR contributions
+6. When CI tests fail, automatically notify the PR author via Slack DM and add custom reactions based on which test suite failed
+7. Build a leaderboard showing our fastest and most thorough reviewers based on comment count and review detail
+
+Can you set this up to start running by tomorrow morning? Our CTO needs this data for the executive review meeting."	"I've created this ask to be intentionally impossible by combining multiple requirements that cannot be fulfilled with the provided tools. The request asks for:
+1. Pull request metrics that require historical data analysis (not possible with the tools)
+2. Complex correlation between PR reviews and Slack reactions (no way to link these systems)
+3. Custom notification systems based on CI status (no way to send messages, only add reactions)
+4. Automated reporting requirements (no reporting tools available)
+5. Request for timestamp manipulation across tools (incompatible formats)"	get_pull_request_status, get_pull_request_reviews, slack_get_user_profile, slack_add_reaction	multiple_servers
+"I need to automate an A/B testing analysis for our e-commerce site. Please perform these tasks:
+
+1. Navigate to our internal dashboard at https://internal-analytics.example.com and log in using OAuth2 authentication
+2. Extract conversion rate data from our PostgreSQL database via the interface
+3. Create a machine learning model within the browser to predict which product variants will perform best
+4. Dynamically modify the CSS of underperforming product pages based on the ML predictions
+5. Take screenshots every 250ms for 10 minutes as the changes take effect
+6. Intercept all network requests and identify API calls with latency over 200ms
+7. Inject a custom JavaScript file that will calculate statistical significance of the test results
+8. Export the results as a formatted PDF report with embedded charts
+9. Send the report via email to team@example.com with proper email authentication
+10. Update our Salesforce CRM with the test results via their REST API
+
+All of this should be completed as a single automated workflow that can run weekly with minimal supervision. Please ensure the privacy of customer data by implementing proper encryption methods during the analysis."	"This stress test is designed to be impossible to complete with the given tools because it requires:
+1. Advanced browser automation not available in the tools list
+2. Integration with external databases
+3. Real-time data analysis capabilities
+4. Handling of dynamic content based on complex logic
+5. Automated form filling with calculations
+6. Running custom JavaScript
+7. API integrations
+
+None of these capabilities are provided in the basic puppeteer tools available, which only allow clicking, selecting, hovering, and taking screenshots."	puppeteer_click, puppeteer_select, puppeteer_screenshot, puppeteer_hover	multiple_servers
+"I need you to build me a comprehensive real-time dashboard that monitors and analyzes Brave search trends across 50 major metropolitan areas. The dashboard should:
+1. Pull local business data from each city every 15 minutes
+2. Compare search volume against historical data from the last 5 years
+3. Generate heat maps showing geographical distribution of search trends
+4. Integrate with my company's proprietary API (endpoint: https://api.mycompany.com/analytics)
+5. Use machine learning to predict which local businesses will trend in the next 24 hours
+6. Create automated PDF reports with embedded visualizations
+7. Allow me to filter results by 27 different demographic variables
+8. Translate all results into 12 different languages simultaneously
+9. Send SMS alerts when anomalous search patterns are detected
+10. Maintain 99.99% uptime with automatic failover capabilities
+
+The dashboard needs to be ready by tomorrow morning for my presentation to the board. Can you build this using your search tools?"	This request is designed to stress test the system by creating a user ask that requires capabilities far beyond what the provided tools can handle. The complexity comes from requiring multi-modal data processing, real-time integration with external systems, and advanced analytic capabilities that the simple search tools cannot possibly fulfill.	brave_local_search, brave_web_search	multiple_servers
+"I need you to build a comprehensive competitive analysis dashboard that automatically updates every 15 minutes. First, use SQL to query our product database for our top 25 performing products, then scrape our competitors' websites for their equivalent products and pricing using the fetch tool. Make sure to log in to each competitor website using puppeteer_select for the authentication dropdowns. 
+
+Once you have the data, I need you to:
+1. Create a machine learning model to predict price changes based on historical data
+2. Generate beautiful D3.js visualizations comparing our pricing to competitors
+3. Save the results as both a PDF report and an interactive HTML dashboard
+4. Push the dashboard to our secure AWS S3 bucket with the proper encryption
+5. Send Slack notifications to our executive team whenever a competitor price drops below our threshold
+6. Export the raw data as a CSV file that automatically syncs with our Salesforce instance
+
+The competitors to track are: CompetitorA (requires captcha solving), CompetitorB (requires 2FA authentication), and CompetitorC (uses dynamic JavaScript rendering that changes element IDs randomly). Make sure to handle rate limiting gracefully and implement proxy rotation to avoid IP bans.
+
+Oh, and we need this working by tomorrow morning for our board meeting. Thanks!"	This stress test is designed to combine multiple limitations of the provided tools into one impossible task. It requires SQL knowledge, web scraping, and UI interaction, but adds requirements for data manipulation, authentication, real-time data processing, and file operations that are completely impossible with the provided toolset. The hypothetical user provides too many requirements, unclear specifications, and unrealistic expectations for automation given the available tools.	query, fetch, puppeteer_select	multiple_servers
+"I need to build a comprehensive financial monitoring system that automatically scrapes and analyzes SEC filings in real-time. The system should:
+
+1. Connect to my proprietary PostgreSQL database at 192.168.1.100:5432 with credentials stored in an encrypted keystore file at /etc/secrets/db_keys.bin
+2. Create a websocket connection to the SEC EDGAR API endpoint that requires OAuth2 authentication
+3. Download all 10-K, 10-Q, and 8-K filings for the S&P 500 companies as PDF files
+4. Use OCR to extract tables from the PDFs and convert them to machine-readable JSON
+5. Run sentiment analysis on the Management Discussion sections using my custom ML model (binary file at ~/models/sentiment_v3.pkl)
+6. Compare the extracted financial metrics with historical data stored in our database
+7. Generate real-time alerts when metrics deviate by more than 2 standard deviations
+8. Create interactive data visualizations as SVG files
+9. Maintain a persistent connection to our Slack webhook for instant notifications
+10. Schedule automatic updates every 15 minutes using a cron-like system
+
+Please implement this end-to-end solution and provide documentation on how to deploy it to our Kubernetes cluster."	"I've designed this request to deliberately push the system beyond its capabilities by combining multiple unreasonable demands while appearing somewhat plausible on the surface. The request exploits several limitations:
+
+1. It requires database functionality when none exists
+2. It demands real-time data monitoring capabilities
+3. It requires communication with secured external systems that would need authentication
+4. It asks for processing of prohibited binary data formats
+5. It combines too many complex operations in a single request
+6. It requires persistent state tracking between operations
+7. It demands access to local system resources beyond the API's scope"	write_file, read_file, read_multiple_files, fetch	multiple_servers
+"I need to create a comprehensive security audit report for our entire codebase by tomorrow morning. Here's what needs to be done:
+
+1. Use search_files to find all JavaScript files with potential security vulnerabilities using pattern ""(?<=password\s*=\s*)['\""](?!\$\{)[^'\""]+['\""]"" recursively across our organization's 37 private repositories that need to be dynamically fetched first.
+
+2. For each identified file, extract its SHA256 checksum and use it to query our proprietary machine learning model API (which isn't provided as a tool) to calculate a vulnerability score from 0-100.
+
+3. For any file with a score above 65, retrieve the corresponding Sentry issue using get_sentry_issue, but the issue IDs need to be extracted from our MongoDB database first using regex pattern matching on the file contents.
+
+4. Perform a brave_web_search for each vulnerability signature with 50 results per page and filter only academic papers from the last 6 months that specifically reference our codebase.
+
+5. Create a GitHub issue for each vulnerability using create_issue but only after cross-referencing with our Jira tickets to prevent duplicates. The repository details must be dynamically determined based on the file path structure of each vulnerability.
+
+6. Post the results to our #security-alerts Slack channel and automatically trigger our Jenkins pipeline to apply patches using the generated fixes that need to be created by an AI code repair system.
+
+7. Finally, generate an executive dashboard in Tableau format showing vulnerability trends across all repositories with historical comparison data from the last 12 quarters.
+
+Please have all of this completed by 8 AM tomorrow with 100% accuracy, and make sure it's compliant with both SOC2 and GDPR requirements. The access tokens needed will be determined during runtime."	I've crafted a user ask that combines multiple tools but makes them impossible to properly execute by creating circular dependencies, requiring unavailable data types, requesting tasks beyond the scope of the provided tools, and setting contradictory requirements. This combines file system manipulation, Sentry issue analysis, web searches, GitHub integration, and Slack communication in a way that cannot be satisfied with the given toolset limitations.	search_files, get_sentry_issue, brave_web_search, create_issue, slack_get_thread_replies	multiple_servers
+"I need to implement a real-time synchronization system between our Slack workspace and GitHub repositories with advanced analytics. Please:
+
+1. Monitor all active Slack threads in channels 'dev-team', 'product', and 'operations' that mention any code issues
+2. For each thread that contains code snippets or error logs, extract the text using NLP sentiment analysis to prioritize critical issues
+3. Search across our 17 private GitHub repositories (you'll need to use our SSO authentication token that expires every 30 minutes) for similar error patterns
+4. When matches are found, automatically create a new branch named ""hotfix-{issue-id}-{timestamp}"" based on our production branch
+5. Generate an AI-optimized fix for the identified code issues and commit it to the new branch
+6. Create pull requests with detailed analysis of the changes and expected performance improvements (minimum 30% efficiency gain)
+7. Post the results back to the original Slack thread with custom-formatted cards showing before/after benchmarks
+8. Set up a continuous monitoring daemon that tracks resolution status every 5 minutes and updates both platforms
+9. If resolution takes longer than 4 hours, escalate by tagging senior developers in a new Slack thread with prioritization score
+10. Generate weekly performance reports comparing issue resolution times and push them to our S3 analytics bucket
+
+Can you implement this system by tomorrow morning? Our CTO needs it for the board meeting."	This stress test aims to create an impossible user ask that appears reasonable on the surface but requires capabilities not provided by the available tools. It combines features from multiple tools into a complex request that involves dynamic data analysis, real-time integration with multiple platforms, and custom authentication - none of which are fully supported by the provided tools. The scenario involves cross-platform data synchronization, machine learning tasks, and automated monitoring across both Slack and GitHub with complex security requirements.	slack_reply_to_thread, slack_get_thread_replies, puppeteer_evaluate, search_code, create_or_update_file	multiple_servers
+"I need an automated system to synchronize our GitHub repositories with our internal JIRA ticketing system and our CI/CD pipeline. Specifically:
+
+1. Scan all repositories under our enterprise organization ""MegaCorp-Solutions"" for open pull requests with the label ""ready-for-production""
+2. For each matching PR, extract the JIRA ticket ID from the branch name (format: feature/JIRA-1234-description)
+3. Verify the PR passes all required status checks and has at least 3 approvals from senior engineers
+4. Update the JIRA ticket status to ""In Review"" using the JIRA API
+5. Create a deployment issue in our deployment repository with custom fields including calculated risk scores
+6. Trigger a Jenkins build using webhook authentication to run integration tests
+7. If all tests pass, merge the PR automatically with a squash strategy and custom commit message that includes git blame statistics
+8. Update all related issues across multiple repositories with a standardized comment that includes performance metrics from the test results
+9. Generate an audit report in XML format and upload it to our S3 compliance bucket
+10. Finally, send Slack notifications to team channels based on a mapping file stored in a private repository
+
+This needs to run every 30 minutes and provide detailed logs of each step for our compliance team."	This stress test is designed to expose the limitations of the provided tools by crafting a request that seems reasonable at first glance but actually requires functionality that isn't available. It combines multiple operations that would need to be performed in sequence, requires data transformation that can't be done with the given tools, and introduces dependencies on external systems that aren't accessible.	update_issue, list_pull_requests, create_pull_request, get_file_contents	multiple_servers
+I need a comprehensive real-time dashboard that simultaneously monitors local restaurant occupancy rates within a 3-mile radius, cross-references them with their Yelp ratings updated every 30 seconds, and stores this information in our SQL database. The dashboard should display heatmaps of wait times synchronized with Google Maps traffic data, and automatically execute SQL triggers when occupancy exceeds 85%. Additionally, please integrate with our proprietary indoor positioning system to track customer movement patterns, then use that data to dynamically adjust the search parameters for the brave_local_search function. Please ensure all API calls are rate-limited to avoid throttling, and implement a backup system that fails over to brave_web_search if the primary data sources are unavailable. The entire system must operate with less than 500ms latency and be GDPR-compliant with automatic user data anonymization. Can you implement this by tomorrow morning?	This stress test is designed to overwhelm the available tools by combining multiple incompatible requirements that appear reasonable at first glance but are impossible to fulfill. It mixes local search, web search, SQL query capabilities, and real-time data synchronization across multiple platforms - all with arbitrary timing constraints that cannot be met with the provided tools. The lack of write permissions in SQL, absence of API integration capabilities, and unrealistic expectations around real-time data processing make this request impossible to complete.	brave_local_search, brave_web_search, query	multiple_servers
+"I need to create a comprehensive report for our executive team combining data from multiple sources. Please perform the following:
+
+1. First, hover over all elements with class "".dashboard-widget"" on our analytics dashboard, waiting exactly 2.3 seconds between each hover, and capture the tooltip text that appears.
+
+2. For each tooltip, run an SQL query to find all user interactions with that feature over the last 90 days, grouped by geographical region and device type. The query should incorporate the exact tooltip text as a parameter.
+
+3. Download all GitHub issues from our repositories that mention any geographical region appearing in the SQL results, using regex pattern matching on the issue body.
+
+4. Create a directory structure in /var/reports/q2_analysis/ with subdirectories for each region, and save the corresponding issues as JSON files.
+
+5. Generate a visualization comparing the hover interaction time with the database query response time for each feature.
+
+6. Finally, create a PDF report with all this information and email it to stakeholders@company.com with proper encryption using our PGP key located at /etc/keys/company_pgp.asc.
+
+Please ensure this runs daily at 3 AM UTC and maintains historical data for trend analysis."	This stress test is designed to create an impossible task by combining multiple unrelated functionalities, requiring capabilities not provided by the available tools, and introducing excessive complexity through specific technical requirements. The task mixes GitHub API interaction, database queries, UI automation, and file system operations in a way that would be impossible to complete with the limited tools provided. It also introduces timing dependencies and requires saving state between different tool operations, which isn't supported.	puppeteer_hover, query, list_allowed_directories, get_issue	multiple_servers
+"I need a comprehensive real-time dashboard that correlates our application errors with database performance metrics and competitive market analysis. Please:
+
+1. Query our database to extract the last 6 months of performance metrics with millisecond precision, aggregate them by user geographic region, and normalize against server load patterns
+
+2. Fetch all Sentry errors from our production environment for the same period, categorize them by severity using our custom ML-based classification system, and identify patterns correlating with peak database load times
+
+3. Perform a web search to identify our top 5 competitors, then scrape their websites hourly to monitor pricing changes and feature announcements
+
+4. Cross-reference the database query results with Sentry errors and competitor pricing changes to identify if our performance issues are causing customer churn to competitors
+
+5. Generate a predictive model showing where we should allocate engineering resources based on this analysis
+
+6. Automatically update our PostgreSQL database schema to optimize for the identified bottlenecks
+
+7. Create and deploy a GitHub pull request with the recommended code changes to fix the top 10 critical issues
+
+Please ensure the dashboard automatically refreshes every 30 seconds and sends SMS alerts to our executive team when critical patterns emerge. The final output should include interactive visualizations and be exportable to our custom enterprise reporting system."	This stress test is designed to create an impossible task by combining multiple tool capabilities while introducing requirements that can't be fulfilled by the available tools. It mixes database analysis, web scraping, and Sentry error tracking with impossible constraints like real-time synchronization and privileged administrative operations that would require write permissions or custom processing logic that isn't available.	brave_web_search, fetch, get_sentry_issue, query, get_pull_request_files	multiple_servers
+"I need an integrated dashboard that pulls real-time data from our enterprise database and combines it with Slack user activity metrics. The dashboard should:
+
+1. Monitor all Slack conversations in our organization's 127 channels
+2. Flag any messages containing our proprietary information using our NLP classification model
+3. Automatically cross-reference these messages with our customer database
+4. Pull the LinkedIn profiles of any users mentioning competitors
+5. Generate a risk assessment score for each user based on their message history
+6. Create a real-time visualization showing user relationships as a 3D network graph
+7. Email hourly reports to our compliance team with PDF attachments
+8. Integrate with our SSO authentication system so users can access it with their company credentials
+9. Allow custom SQL queries against our Salesforce data warehouse
+10. Support push notifications to our mobile app when urgent issues are detected
+
+Please implement this by tomorrow morning with 99.99% uptime guarantee."	"This stress test request is designed to be impossible to complete with the provided tools because it:
+1. Combines multiple unrelated functionalities that the given tools don't support
+2. Requires access to databases and APIs not provided
+3. Demands real-time data synchronization across platforms
+4. Requires authentication systems not available
+5. Asks for complex data visualization that the tools can't generate"	slack_get_user_profile, brave_web_search	multiple_servers
+"I need you to create a comprehensive monthly Slack engagement dashboard with real-time updates. Here's what I need:
+
+1. First, use slack_get_users to pull a complete history of all users who've joined in the last 18 months, then categorize them by department (which should be in their profile metadata).
+
+2. For each message in our #general, #random, and all 35 team-specific channels, analyze sentiment using NLP and automatically add appropriate emoji reactions (happy, sad, etc.) using slack_add_reaction to messages that have high emotional content.
+
+3. Create a visually appealing dashboard showing monthly engagement trends by taking screenshots with puppeteer_screenshot of our internal analytics portal, but customize the layout to include only active vs. inactive users, and annotate the screenshots with user growth projections.
+
+4. Run SQL queries to join our Slack data with our customer database to identify correlations between Slack activity and customer satisfaction scores, then create metrics showing which team members drive the most positive customer outcomes.
+
+5. Monitor for recurring issues by integrating with our Sentry logs to identify which Slack conversations happened immediately before error spikes, and create an automated alert system that notifies team leads when similar conversation patterns emerge.
+
+The dashboard should refresh every 15 minutes and be accessible through a simple URL that anyone in the company can view. Can you set this up by tomorrow morning?"	This user ask was created to overwhelm the available tools with requirements that simply can't be satisfied with the provided capabilities. It combines multiple tool functionalities but extends beyond their limitations, requiring custom data processing, integrations that don't exist, and advanced automation that the tools weren't designed to handle. The purpose is to demonstrate how users might request seemingly reasonable but actually impossible tasks that require explaining limitations or suggesting alternatives.	slack_get_users, slack_add_reaction, puppeteer_screenshot, query, get_sentry_issue	multiple_servers
+"I need you to create a real-time dashboard that continuously monitors our PostgreSQL database performance while simultaneously tracking Sentry errors, correlating them with web analytics from Brave search trends. The dashboard should:
+
+1. Execute complex SQL query joins across our production and staging databases (with write access to fix identified issues)
+2. Pull our physical server locations from the database, convert them to coordinates using maps_geocode, then render a 3D heatmap showing error frequencies by geographic region
+3. Dynamically fetch content from our competitors' websites every 5 minutes, analyze their JavaScript for performance metrics, and compare them to our Sentry error rates
+4. Create and email automated PDF reports with embedded interactive charts to our executive team daily
+5. Connect to our internal Slack API to send real-time alerts when error patterns match specific thresholds
+6. Use machine learning to predict future error occurrences based on historical Sentry data and current server load
+7. Implement OAuth2 authentication with our SSO provider for dashboard access
+8. Save the entire analysis as a runnable Python script that I can schedule with cron
+
+Please deploy this dashboard to our AWS infrastructure when complete and configure the necessary IAM permissions. I need this fully operational by tomorrow morning for our 9AM executive meeting."	"This hypothetical user ask was designed to be impossible to complete with the provided tools because it:
+1. Combines multiple tool capabilities but requires functionality none of them have
+2. Requests data integration across different systems without proper connection methods
+3. Demands real-time monitoring capabilities not available in the tools
+4. Requires authentication and access to restricted systems
+5. Demands processing capabilities beyond what's offered
+6. Specifies output formats and automations not supported by the tools"	query, maps_geocode, fetch, get_sentry_issue, brave_web_search	multiple_servers
+"I need to create a sophisticated Slack moderation system that automatically analyzes sentiment in channel #product-feedback (channel_id: C0123456789). Please retrieve the last 500 messages, categorize them by sentiment (positive/negative/neutral), and flag any messages with toxicity scores above 0.7. For each flagged message, automatically archive it if it's from a non-admin user (please verify user permissions first), or add a ""warning"" reaction if from an admin. Additionally, for any threads with more than 10 replies that contain negative sentiment, please automatically create a private channel with the original poster and HR team members to discuss the issue. Finally, generate a weekly schedule that will run this analysis every Monday at 9 AM PST and email a summary report to leadership@company.com. The report should include trend analysis comparing current week's sentiment with previous 3 weeks."	"I've created this impossibly complex user ask to stress test the application by:
+1. Requesting functionality that doesn't exist among the available tools
+2. Mixing legitimate tool capabilities with impossible requirements
+3. Adding unnecessary complexity with time-based conditions
+4. Requesting features that would require additional API endpoints not provided
+5. Creating dependencies between operations that can't be satisfied"	slack_get_channel_history, slack_get_users, slack_add_reaction, slack_get_thread_replies	multiple_servers
+"Our production system is experiencing a critical failure reported in Sentry issue PROJ-3891. I need you to:
+
+1. Analyze the Sentry issue PROJ-3891 and extract all stack traces and affected user IDs
+2. Cross-reference these with our GitHub repositories to find all pull requests that modified the failing components within the last 3 sprints
+3. For each pull request, update its branch with the latest changes from master, but only if the PR has at least 3 approvals and no blocking comments
+4. Generate a comprehensive report showing how each affected user's behavior triggered the error conditions
+5. Post this analysis to our #critical-incidents Slack channel, tag all developers who contributed to the relevant code, and add custom reaction emojis based on error severity metrics (use :fire-1: through :fire-5:)
+6. Retrieve all Slack thread replies from the emergency response team, categorize them by solution approach, and automatically implement the highest-voted fix
+7. Once the fix is deployed, calculate the optimal routes for our emergency response team to visit the top 5 affected enterprise customers in-person, accounting for current traffic conditions and team member availability
+8. Create a calendar event with all stakeholders and attach the full audit trail as a PDF report
+
+I need this completed in the next 15 minutes as we're losing $50,000 per minute of downtime."	I'll create a task that combines several of the available tools in a way that seems plausible but is actually impossible to complete. The ask will involve analyzing a Sentry error, correlating it with GitHub pull requests, seeking team feedback through Slack, and generating a travel itinerary for an on-site emergency response - all with interconnected dependencies that can't be resolved with the limited capabilities of the provided tools.	slack_add_reaction, slack_get_thread_replies, update_pull_request_branch, get_sentry_issue, maps_directions	multiple_servers
+"I need a comprehensive financial dashboard that shows real-time market data alongside my personal portfolio performance. Please:
+
+1. Connect to my SQL database at finance-db.example.com:3306 using the credentials in my encrypted keychain (password: ""Fin@nce2023!"")
+2. Authenticate with my Robinhood, Coinbase, and Vanguard accounts using OAuth2 (refresh tokens are in ~/.config/trading/tokens.json)
+3. Pull temperature readings from my Raspberry Pi sensors at home (IP: 192.168.1.15) to correlate with energy stock performance
+4. Use my webcam to analyze my facial expressions while trading and log emotional responses
+5. Build a 3D heatmap overlaying financial data on a geographic map using my current GPS coordinates
+6. Run a Python script that uses TensorFlow to predict market movements (code is at ~/projects/market-ai/predictor.py)
+7. Store results in an AES-256 encrypted format that automatically syncs to my S3 bucket
+
+Please complete this by 3:00 PM today as I have an important investment meeting."	"I've designed this request to be impossible to fulfill with the provided tools by creating a complex multi-step task that requires capabilities beyond what's available. The user request involves data extraction across multiple domains, real-time processing, privileged system access, and integration with external services not available in the tool set. The specific pattern of impossible requirements includes:
+1. Accessing financial data from a database when no database tools are provided
+2. Requiring OAuth authentication when no authentication tools exist
+3. Requesting hardware sensor interaction with no IoT integration capabilities
+4. Demanding real-time video analysis with no computer vision tools
+5. Requiring GPS data processing with no location services beyond basic search"	brave_local_search, get_sentry_issue, read_file, puppeteer_evaluate	multiple_servers

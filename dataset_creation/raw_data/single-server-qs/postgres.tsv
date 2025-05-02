@@ -1,0 +1,25 @@
+task	answer	explanation	sampled_tool_names	server_id
+Show me the top 10 customers who have placed the most orders in the last 6 months, including their names, contact information, and the total value of their purchases.	yes	"The provided tool is a 'query' tool that can execute read-only SQL queries against a connected database. This tool allows users to retrieve data from a database but doesn't permit operations that modify the database (like INSERT, UPDATE, DELETE, etc.) since it's specified as ""read-only"".
+
+With this tool, users can perform various data retrieval operations such as:
+1. Fetching specific records from tables
+2. Aggregating data (count, sum, average, etc.)
+3. Joining multiple tables to get related information
+4. Filtering data based on conditions
+5. Sorting and organizing results
+
+Since the tool allows executing SQL queries, any user ask that requires retrieving information from a database can be completed."	query	postgres
+Can you show me the top 5 customers who have spent the most money in our store during the last quarter, including their names, email addresses, and total purchase amounts?	yes	"Based on the provided tools, I have access to only one tool called 'query' which allows me to execute read-only SQL queries against a connected database. This tool takes a single required argument - 'sql', which is the SQL query to execute.
+
+With this tool, I can fulfill user requests that involve retrieving data from a database through read-only SQL queries. This includes tasks like:
+- Fetching specific records from a table
+- Counting records
+- Performing aggregations (SUM, AVG, MIN, MAX, etc.)
+- Joining tables to retrieve related information
+- Filtering data using WHERE clauses
+- Sorting data using ORDER BY
+- Grouping data using GROUP BY
+
+However, I cannot perform data modification operations like INSERT, UPDATE, DELETE, or CREATE since the tool is described as ""read-only"". I also cannot perform any non-SQL operations or tasks that would require additional tools.
+
+Since the tool does allow for read-only database queries, the answer is yes - I can fulfill user requests related to data retrieval and analysis from the connected database."	query	postgres

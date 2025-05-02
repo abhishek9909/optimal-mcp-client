@@ -1,0 +1,35 @@
+{"tools": [
+    {
+      "name": "query",
+      "description": "Execute read-only SQL queries against the connected database",
+      "arguments": [
+        {
+          "name": "sql",
+          "type": "string",
+          "description": "The SQL query to execute",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Table Schemas",
+      "description": "JSON schema information for each table in the database, including column names and data types, automatically discovered from database metadata",
+      "arguments": [
+        {
+          "name": "host",
+          "type": "string",
+          "description": "The database host",
+          "required": true
+        },
+        {
+          "name": "table",
+          "type": "string",
+          "description": "The database table name",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

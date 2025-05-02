@@ -1,0 +1,158 @@
+{"resources": [
+    {
+      "name": "file://system",
+      "description": "File system operations interface"
+    }
+  ],
+  "tools": [
+    {
+      "name": "read_file",
+      "description": "Read complete contents of a file with UTF-8 encoding",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Location of the file to read",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "read_multiple_files",
+      "description": "Read multiple files simultaneously - failed reads won't stop the entire operation",
+      "arguments": [
+        {
+          "name": "paths",
+          "type": "string[]",
+          "description": "Array of file paths to read",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "write_file",
+      "description": "Create new file or overwrite existing (exercise caution with this)",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "File location",
+          "required": true
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "description": "File content",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "edit_file",
+      "description": "Make selective edits using advanced pattern matching and formatting",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "File to edit",
+          "required": true
+        },
+        {
+          "name": "edits",
+          "type": "array",
+          "description": "List of edit operations containing oldText (text to search for) and newText (text to replace with)",
+          "required": true
+        },
+        {
+          "name": "dryRun",
+          "type": "boolean",
+          "description": "Preview changes without applying (default: false)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_directory",
+      "description": "Create new directory or ensure it exists - creates parent directories if needed",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Directory path to create",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "list_directory",
+      "description": "List directory contents with [FILE] or [DIR] prefixes",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Directory path to list",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "move_file",
+      "description": "Move or rename files and directories - fails if destination exists",
+      "arguments": [
+        {
+          "name": "source",
+          "type": "string",
+          "description": "Source file or directory path",
+          "required": true
+        },
+        {
+          "name": "destination",
+          "type": "string",
+          "description": "Destination file or directory path",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "search_files",
+      "description": "Recursively search for files/directories using case-insensitive matching",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Starting directory",
+          "required": true
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "description": "Search pattern",
+          "required": true
+        },
+        {
+          "name": "excludePatterns",
+          "type": "string[]",
+          "description": "Exclude any patterns (glob formats supported)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "get_file_info",
+      "description": "Get detailed file/directory metadata including size, times, type, and permissions",
+      "arguments": [
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Path to file or directory",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "list_allowed_directories",
+      "description": "List all directories the server is allowed to access",
+      "arguments": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{"tools": [
+    {
+      "name": "fetch",
+      "description": "Fetches a URL from the internet and extracts its contents as markdown.",
+      "arguments": [
+        {
+          "name": "url",
+          "type": "string",
+          "description": "URL to fetch",
+          "required": true
+        },
+        {
+          "name": "max_length",
+          "type": "integer",
+          "description": "Maximum number of characters to return (default: 5000)",
+          "required": false
+        },
+        {
+          "name": "start_index",
+          "type": "integer",
+          "description": "Start content from this character index (default: 0)",
+          "required": false
+        },
+        {
+          "name": "raw",
+          "type": "boolean",
+          "description": "Get raw content without markdown conversion (default: false)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "fetch",
+      "description": "Fetch a URL and extract its contents as markdown",
+      "arguments": [
+        {
+          "name": "url",
+          "type": "string",
+          "description": "URL to fetch",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

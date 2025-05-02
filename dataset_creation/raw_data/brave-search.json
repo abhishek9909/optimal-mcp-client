@@ -1,0 +1,52 @@
+{"tools": [
+    {
+      "name": "brave_web_search",
+      "description": "Execute web searches with pagination and filtering",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "string",
+          "description": "Search terms",
+          "required": true
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "description": "Results per page (max 20)",
+          "required": false
+        },
+        {
+          "name": "offset",
+          "type": "number",
+          "description": "Pagination offset (max 9)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "brave_local_search",
+      "description": "Search for local businesses and services. Automatically falls back to web search if no local results found",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "string",
+          "description": "Local search terms",
+          "required": true
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "description": "Number of results (max 20)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Brave Search API Key",
+      "description": "Required API key for accessing Brave Search API",
+      "arguments": []
+    }
+  ]
+}

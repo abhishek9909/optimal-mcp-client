@@ -1,0 +1,15 @@
+task	answer	explanation	sampled_tool_names	server_id
+Find pizza restaurants near me and show me the top 5 results.	yes	"Based on the tools provided, I can determine that user asks related to web searches and local business searches can be completed. The available tools are:
+
+1. `brave_local_search`: This tool allows searching for local businesses and services, with automatic fallback to web search if no local results are found. It requires a query string and optionally accepts a count parameter to limit results.
+
+2. `brave_web_search`: This tool executes general web searches with pagination and filtering capabilities. It requires a query string and optionally accepts count and offset parameters for pagination.
+
+With these tools, a user could ask to search for information on the web or find local businesses/services. These tools would allow for answering informational queries, finding local establishments, or researching topics online."	brave_local_search, brave_web_search	brave-search
+Find Italian restaurants near me, and if there aren't any, search for Italian food recipes I can make at home.	yes	"Looking at the provided tools, we have two search capabilities:
+1. `brave_local_search` - For searching local businesses and services
+2. `brave_web_search` - For general web searches with pagination
+
+Both of these tools would allow a user to search for information, with the first specializing in local results and the second providing general web search functionality with pagination options.
+
+Given these tools, users could definitely make search-related requests that could be fulfilled. These could range from looking for nearby restaurants (local search) to researching topics on the web (web search)."	brave_local_search, brave_web_search	brave-search

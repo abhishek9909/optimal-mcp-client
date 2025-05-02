@@ -1,0 +1,30 @@
+task	answer	explanation	sampled_tool_names	server_id
+"Can you list all the public channels in our Slack workspace, then post a message saying ""Hello team! Just checking in."" to the #general channel, and then show me the replies to my message once people respond?"	yes	"Based on the tools provided, users can perform several Slack-related actions:
+1. List channels in a Slack workspace using `slack_list_channels`
+2. Post messages to Slack channels using `slack_post_message`
+3. Get replies in a message thread using `slack_get_thread_replies`
+4. Retrieve user profile information using `slack_get_user_profile`
+
+These tools allow users to perform basic Slack interactions like viewing channels, sending messages, viewing conversation threads, and checking user profiles. The tools are limited to these specific functions and don't support actions like creating channels, deleting messages, uploading files, etc."	slack_list_channels, slack_post_message, slack_get_thread_replies, slack_get_user_profile	slack
+"Can you add a thumbs up reaction to the message with timestamp 1634567890.123456 in the #general channel, and then reply to that message thread saying ""I agree with your point""?"	yes	"Based on the tools provided, I can determine that a user could make asks related to Slack operations, specifically:
+1. Adding emoji reactions to messages using `slack_add_reaction`
+2. Replying to message threads using `slack_reply_to_thread`
+3. Listing channels in a Slack workspace using `slack_list_channels`
+
+These tools would enable a user to perform basic Slack interactions programmatically. The user would need to provide the required arguments like channel IDs and message timestamps, but the tools themselves provide the functionality to interact with Slack in these specific ways."	slack_add_reaction, slack_reply_to_thread, slack_list_channels	slack
+"Can you post a message saying ""Team meeting scheduled for tomorrow at 2pm"" in the #general channel, and then add a thumbs-up emoji reaction to it?"	yes	"Based on the provided tools, I can determine that a user could make various requests related to Slack functionality. The available tools allow for:
+1. Adding emoji reactions to messages
+2. Posting new messages to channels
+3. Getting replies in a thread
+4. Replying to threads
+5. Getting user profile information
+
+These tools cover the basic communication functionalities within Slack, allowing users to interact with messages, threads, and user profiles. Since these tools provide a comprehensive set of Slack interaction capabilities, many user requests involving Slack messaging and reactions could be fulfilled."	slack_add_reaction, slack_post_message, slack_get_thread_replies, slack_reply_to_thread, slack_get_user_profile	slack
+Can you send a reminder message to the #project-updates channel about our deadline tomorrow, then check if anyone has replied to my previous announcement about it, and if so, summarize their responses for me?	yes	"Based on the tools provided, I can see several Slack-related functions that enable interaction with Slack channels, messages, threads, and users. The tools allow for:
+1. Getting replies in a message thread
+2. Replying to a specific thread
+3. Posting new messages to channels
+4. Listing available channels
+5. Retrieving user information
+
+With these tools, a user could ask for various Slack-related tasks such as sending messages, retrieving conversation threads, or getting information about channels and users in their workspace."	slack_get_thread_replies, slack_reply_to_thread, slack_post_message, slack_list_channels, slack_get_users	slack

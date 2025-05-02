@@ -1,0 +1,962 @@
+{"tools": [
+    {
+      "name": "create_or_update_file",
+      "description": "Create or update a single file in a repository",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner (username or organization)",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Path where to create/update the file",
+          "required": true
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "description": "Content of the file",
+          "required": true
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "description": "Commit message",
+          "required": true
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "description": "Branch to create/update the file in",
+          "required": true
+        },
+        {
+          "name": "sha",
+          "type": "string",
+          "description": "SHA of file being replaced (for updates)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "push_files",
+      "description": "Push multiple files in a single commit",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "description": "Branch to push to",
+          "required": true
+        },
+        {
+          "name": "files",
+          "type": "array",
+          "description": "Files to push, each with path and content",
+          "required": true
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "description": "Commit message",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "search_repositories",
+      "description": "Search for GitHub repositories",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "string",
+          "description": "Search query",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "number",
+          "description": "Page number for pagination",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "number",
+          "description": "Results per page (max 100)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_repository",
+      "description": "Create a new GitHub repository",
+      "arguments": [
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Repository description",
+          "required": false
+        },
+        {
+          "name": "private",
+          "type": "boolean",
+          "description": "Whether repo should be private",
+          "required": false
+        },
+        {
+          "name": "autoInit",
+          "type": "boolean",
+          "description": "Initialize with README",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "get_file_contents",
+      "description": "Get contents of a file or directory",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Path to file/directory",
+          "required": true
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "description": "Branch to get contents from",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_issue",
+      "description": "Create a new issue",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Issue title",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "description": "Issue description",
+          "required": false
+        },
+        {
+          "name": "assignees",
+          "type": "string[]",
+          "description": "Usernames to assign",
+          "required": false
+        },
+        {
+          "name": "labels",
+          "type": "string[]",
+          "description": "Labels to add",
+          "required": false
+        },
+        {
+          "name": "milestone",
+          "type": "number",
+          "description": "Milestone number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_pull_request",
+      "description": "Create a new pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "PR title",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "description": "PR description",
+          "required": false
+        },
+        {
+          "name": "head",
+          "type": "string",
+          "description": "Branch containing changes",
+          "required": true
+        },
+        {
+          "name": "base",
+          "type": "string",
+          "description": "Branch to merge into",
+          "required": true
+        },
+        {
+          "name": "draft",
+          "type": "boolean",
+          "description": "Create as draft PR",
+          "required": false
+        },
+        {
+          "name": "maintainer_can_modify",
+          "type": "boolean",
+          "description": "Allow maintainer edits",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "fork_repository",
+      "description": "Fork a repository",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "organization",
+          "type": "string",
+          "description": "Organization to fork to",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_branch",
+      "description": "Create a new branch",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "branch",
+          "type": "string",
+          "description": "Name for new branch",
+          "required": true
+        },
+        {
+          "name": "from_branch",
+          "type": "string",
+          "description": "Source branch (defaults to repo default)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "list_issues",
+      "description": "List and filter repository issues",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "description": "Filter by state ('open', 'closed', 'all')",
+          "required": false
+        },
+        {
+          "name": "labels",
+          "type": "string[]",
+          "description": "Filter by labels",
+          "required": false
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "description": "Sort by ('created', 'updated', 'comments')",
+          "required": false
+        },
+        {
+          "name": "direction",
+          "type": "string",
+          "description": "Sort direction ('asc', 'desc')",
+          "required": false
+        },
+        {
+          "name": "since",
+          "type": "string",
+          "description": "Filter by date (ISO 8601 timestamp)",
+          "required": false
+        },
+        {
+          "name": "page",
+          "type": "number",
+          "description": "Page number",
+          "required": false
+        },
+        {
+          "name": "per_page",
+          "type": "number",
+          "description": "Results per page",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "update_issue",
+      "description": "Update an existing issue",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "issue_number",
+          "type": "number",
+          "description": "Issue number to update",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "New title",
+          "required": false
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "description": "New description",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "description": "New state ('open' or 'closed')",
+          "required": false
+        },
+        {
+          "name": "labels",
+          "type": "string[]",
+          "description": "New labels",
+          "required": false
+        },
+        {
+          "name": "assignees",
+          "type": "string[]",
+          "description": "New assignees",
+          "required": false
+        },
+        {
+          "name": "milestone",
+          "type": "number",
+          "description": "New milestone number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "add_issue_comment",
+      "description": "Add a comment to an issue",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "issue_number",
+          "type": "number",
+          "description": "Issue number to comment on",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "description": "Comment text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "search_code",
+      "description": "Search for code across GitHub repositories",
+      "arguments": [
+        {
+          "name": "q",
+          "type": "string",
+          "description": "Search query using GitHub code search syntax",
+          "required": true
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "description": "Sort field ('indexed' only)",
+          "required": false
+        },
+        {
+          "name": "order",
+          "type": "string",
+          "description": "Sort order ('asc' or 'desc')",
+          "required": false
+        },
+        {
+          "name": "per_page",
+          "type": "number",
+          "description": "Results per page (max 100)",
+          "required": false
+        },
+        {
+          "name": "page",
+          "type": "number",
+          "description": "Page number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "search_issues",
+      "description": "Search for issues and pull requests",
+      "arguments": [
+        {
+          "name": "q",
+          "type": "string",
+          "description": "Search query using GitHub issues search syntax",
+          "required": true
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "description": "Sort field (comments, reactions, created, etc.)",
+          "required": false
+        },
+        {
+          "name": "order",
+          "type": "string",
+          "description": "Sort order ('asc' or 'desc')",
+          "required": false
+        },
+        {
+          "name": "per_page",
+          "type": "number",
+          "description": "Results per page (max 100)",
+          "required": false
+        },
+        {
+          "name": "page",
+          "type": "number",
+          "description": "Page number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "search_users",
+      "description": "Search for GitHub users",
+      "arguments": [
+        {
+          "name": "q",
+          "type": "string",
+          "description": "Search query using GitHub users search syntax",
+          "required": true
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "description": "Sort field (followers, repositories, joined)",
+          "required": false
+        },
+        {
+          "name": "order",
+          "type": "string",
+          "description": "Sort order ('asc' or 'desc')",
+          "required": false
+        },
+        {
+          "name": "per_page",
+          "type": "number",
+          "description": "Results per page (max 100)",
+          "required": false
+        },
+        {
+          "name": "page",
+          "type": "number",
+          "description": "Page number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "list_commits",
+      "description": "Gets commits of a branch in a repository",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "string",
+          "description": "page number",
+          "required": false
+        },
+        {
+          "name": "per_page",
+          "type": "string",
+          "description": "number of record per page",
+          "required": false
+        },
+        {
+          "name": "sha",
+          "type": "string",
+          "description": "branch name",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "get_issue",
+      "description": "Gets the contents of an issue within a repository",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "issue_number",
+          "type": "number",
+          "description": "Issue number to retrieve",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "get_pull_request",
+      "description": "Get details of a specific pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "list_pull_requests",
+      "description": "List and filter repository pull requests",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "description": "Filter by state ('open', 'closed', 'all')",
+          "required": false
+        },
+        {
+          "name": "head",
+          "type": "string",
+          "description": "Filter by head user/org and branch",
+          "required": false
+        },
+        {
+          "name": "base",
+          "type": "string",
+          "description": "Filter by base branch",
+          "required": false
+        },
+        {
+          "name": "sort",
+          "type": "string",
+          "description": "Sort by ('created', 'updated', 'popularity', 'long-running')",
+          "required": false
+        },
+        {
+          "name": "direction",
+          "type": "string",
+          "description": "Sort direction ('asc', 'desc')",
+          "required": false
+        },
+        {
+          "name": "per_page",
+          "type": "number",
+          "description": "Results per page (max 100)",
+          "required": false
+        },
+        {
+          "name": "page",
+          "type": "number",
+          "description": "Page number",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_pull_request_review",
+      "description": "Create a review on a pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "description": "Review comment text",
+          "required": true
+        },
+        {
+          "name": "event",
+          "type": "string",
+          "description": "Review action ('APPROVE', 'REQUEST_CHANGES', 'COMMENT')",
+          "required": true
+        },
+        {
+          "name": "commit_id",
+          "type": "string",
+          "description": "SHA of commit to review",
+          "required": false
+        },
+        {
+          "name": "comments",
+          "type": "array",
+          "description": "Line-specific comments, each with path, position, and body",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "merge_pull_request",
+      "description": "Merge a pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        },
+        {
+          "name": "commit_title",
+          "type": "string",
+          "description": "Title for merge commit",
+          "required": false
+        },
+        {
+          "name": "commit_message",
+          "type": "string",
+          "description": "Extra detail for merge commit",
+          "required": false
+        },
+        {
+          "name": "merge_method",
+          "type": "string",
+          "description": "Merge method ('merge', 'squash', 'rebase')",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "get_pull_request_files",
+      "description": "Get the list of files changed in a pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "get_pull_request_status",
+      "description": "Get the combined status of all status checks for a pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "update_pull_request_branch",
+      "description": "Update a pull request branch with the latest changes from the base branch (equivalent to GitHub's \"Update branch\" button)",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        },
+        {
+          "name": "expected_head_sha",
+          "type": "string",
+          "description": "The expected SHA of the pull request's HEAD ref",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "get_pull_request_comments",
+      "description": "Get the review comments on a pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "get_pull_request_reviews",
+      "description": "Get the reviews on a pull request",
+      "arguments": [
+        {
+          "name": "owner",
+          "type": "string",
+          "description": "Repository owner",
+          "required": true
+        },
+        {
+          "name": "repo",
+          "type": "string",
+          "description": "Repository name",
+          "required": true
+        },
+        {
+          "name": "pull_number",
+          "type": "number",
+          "description": "Pull request number",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Search Query Syntax",
+      "description": "Detailed examples of how to structure search queries for code, issues, and users",
+      "arguments": []
+    },
+    {
+      "name": "Personal Access Token",
+      "description": "Instructions on how to create a GitHub Personal Access Token with appropriate permissions",
+      "arguments": []
+    },
+    {
+      "name": "Setup",
+      "description": "How to set up the GitHub MCP Server with Claude Desktop, VS Code or VS Code Insiders",
+      "arguments": []
+    }
+  ]
+}
